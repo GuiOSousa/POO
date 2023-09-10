@@ -15,7 +15,7 @@ const sevenDaysFromToday = new Date()
 sevenDaysFromToday.setDate(sevenDaysFromToday.getDate() + 7)
 const rent1 = Rent.create([], bike, user, today, twoDaysFromToday)
 const user2 = new User('Maria Clara', 'maria@mail.com', '3123')
-const usersToAdd = [{"name": "Maria Teresa","email": "mariat@gmail.com","password": "abcd1234"},{"name": "Carlos Gomes","email": "carlao1234@gmail.com","password": "senhaSegura"},{"name": "Jõao Costa","email": "jcosta@gmail.com","password": "12346789"},{"name": "Miles Morales","email": "miranha@gmail.com","password": "AbCdEfGh"},{"name": "Joana Miranda","email": "jojo645@gmail.com","password": "seinha"},{"name": "Olívia Oliveira","email": "olioli@uol.com.br","password": "0198763455"}]
+const usersToAdd = [{"name": "Maria Teresa","email": "mariat@mail.com","password": "abcd1234"},{"name": "Carlos Gomes","email": "carlao1234@mail.com","password": "senhaSegura"},{"name": "Jõao Costa","email": "jcosta@mail.com","password": "12346789"},{"name": "Miles Morales","email": "miranha@mail.com","password": "AbCdEfGh"},{"name": "Joana Miranda","email": "jojo645@mail.com","password": "seinha"},{"name": "Olívia Oliveira","email": "olioli@mail.com.br","password": "0198763455"}]
 /*const bikesToAdd = [{"name": "Monark 430","type": "Mountain Bike","bodySize": 12,"maxLoad": 1,"rate": 4.7,"description": "Bike description","ratings": 100,"imageUrls": ["www.images.com"]
 },{"name": "Monark 500","type": "Mountain Bike","bodySize": 15,"maxLoad": 2,"rate": 4.6,"description": "Bike description","ratings": 63,"imageUrls": ["www.images.com"]
 },{"name": "Caloi Cicle X","type": "Street Bike","bodySize": 12,"maxLoad": 1,"rate": 4.96,"description": "Bike description","ratings": 634,"imageUrls": ["www.images.com", "www.images.com"]
@@ -37,12 +37,12 @@ app.showUsers()
 app.showBikes()
 app.showRents()
 
-if (app.userAuthentication("mariat@gmail.com", "abcd1234")){
+if (app.userAuthentication("mariat@mail.com", "abcd1234")){
     console.log("Sucessful Login")
 } else {
     console.log("Incorrect password")
 }
-if (app.userAuthentication("carlao1234@gmail.com", "XXXXX")){
+if (app.userAuthentication("carlao1234@mail.com", "XXXXX")){
     console.log("Sucessful Login")
 } else {
     console.log("Incorrect password")
