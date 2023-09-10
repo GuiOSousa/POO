@@ -61,6 +61,25 @@ var App = /** @class */ (function () {
         }
         bike.available = true;
     };
+    App.prototype.showUsers = function () {
+        console.log("\n### User list (".concat(this.users.length, ") ###"));
+        this.users.forEach(function (user) { return console.log("- ".concat(user.name, ", email: ").concat(user.email)); });
+    };
+    App.prototype.showBikes = function () {
+        console.log("\n### Bike list (".concat(this.bikes.length, ") ###"));
+        this.bikes.forEach(function (bike) { return console.log(" - bike name: ".concat(bike.name, "  \u2B50: ").concat(bike.rate, " | available: ").concat((bike.available ? "\u2705" : "\u274C"))); });
+    };
+    App.prototype.showRents = function () {
+        console.log("\n### Rent list (".concat(this.bikes.length, ") ###"));
+        this.rents.forEach(function (rent) { return console.log(" - user: ".concat(rent.user, " | bike: ").concat(rent.bike, " | from: ").concat(rent.dateFrom, " to: ").concat(rent.dateTo)); });
+    };
+    App.prototype.userAuthentication = function (email, password) {
+        var user = this.findUser(email);
+        if (user === undefined) {
+            throw new Error("User not found.");
+        }
+        return user.password === password;
+    };
     return App;
 }());
 exports.App = App;

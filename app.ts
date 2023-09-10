@@ -24,11 +24,9 @@ export class App {
 
     removeUser(user: User): void {
         const userToBeRemoved = this.findUser(user.email)
-
         if(userToBeRemoved === undefined) {
             throw new Error('User not found.')
         }
-        
         this.users = this.users.filter(object => object.id === userToBeRemoved.id)
     }
 
@@ -68,5 +66,28 @@ export class App {
             throw new Error('Bike not registered.')
         }
         bike.available = true
+    }
+
+    showUsers(): void {
+        console.log(`\n### User list (${this.users.length}) ###`)
+        this.users.forEach(user => console.log(`- ${user.name}, email: ${user.email}`))
+    }
+
+    showBikes(): void {
+        console.log(`\n### Bike list (${this.bikes.length}) ###`)
+        this.bikes.forEach(bike => console.log(` - bike name: ${bike.name}  \u{2b50}: ${bike.rate} | available: ${(bike.available ? '\u{2705}' : '\u{274c}')}`))
+    }
+
+    showRents(): void {
+        console.log(`\n### Rent list (${this.bikes.length}) ###`)
+        this.rents.forEach(rent => console.log(` - user: ${rent.user} | bike: ${rent.bike} | from: ${rent.dateFrom} to: ${rent.dateTo}`))
+    }
+
+    userAuthentication(email: string, password: String): boolean {
+        const user = this.findUser(email)
+        if (user === undefined) {
+            throw new Error("User not found.")
+        }
+        return user.password === password
     }
 }
