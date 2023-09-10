@@ -15,14 +15,12 @@ var sevenDaysFromToday = new Date();
 sevenDaysFromToday.setDate(sevenDaysFromToday.getDate() + 7);
 var rent1 = rent_1.Rent.create([], bike, user, today, twoDaysFromToday);
 var user2 = new user_1.User('Maria Clara', 'maria@mail.com', '3123');
-var usersToAdd = [{ "name": "Maria Teresa", "email": "mariat@gmail.com", "password": "abcd1234" }, { "name": "Carlos Gomes", "email": "carlao1234@gmail.com", "password": "senhaSegura" }, { "name": "Jõao Costa", "email": "jcosta@gmail.com", "password": "12346789" }, { "name": "Miles Morales", "email": "miranha@gmail.com", "password": "AbCdEfGh" }, { "name": "Joana Miranda", "email": "jojo645@gmail.com", "password": "seinha" }, { "name": "Olívia Oliveira", "email": "olioli@uol.com.br", "password": "0198763455" }];
-
+var usersToAdd = [{ "name": "Maria Teresa", "email": "mariat@mail.com", "password": "abcd1234" }, { "name": "Carlos Gomes", "email": "carlao1234@mail.com", "password": "senhaSegura" }, { "name": "Jõao Costa", "email": "jcosta@mail.com", "password": "12346789" }, { "name": "Miles Morales", "email": "miranha@mail.com", "password": "AbCdEfGh" }, { "name": "Joana Miranda", "email": "jojo645@mail.com", "password": "seinha" }, { "name": "Olívia Oliveira", "email": "olioli@mail.com.br", "password": "0198763455" }];
 /*const bikesToAdd = [{"name": "Monark 430","type": "Mountain Bike","bodySize": 12,"maxLoad": 1,"rate": 4.7,"description": "Bike description","ratings": 100,"imageUrls": ["www.images.com"]
 },{"name": "Monark 500","type": "Mountain Bike","bodySize": 15,"maxLoad": 2,"rate": 4.6,"description": "Bike description","ratings": 63,"imageUrls": ["www.images.com"]
 },{"name": "Caloi Cicle X","type": "Street Bike","bodySize": 12,"maxLoad": 1,"rate": 4.96,"description": "Bike description","ratings": 634,"imageUrls": ["www.images.com", "www.images.com"]
 },{"name": "Caloi 2000","type": "Mountain Bike","bodySize": 16,"maxLoad": 1,"rate": 3.7,"description": "Bike description","ratings": 45,"imageUrls": ["www.images.com"]
 },{"name": "Focus Speed","type": "Street Bike","bodySize": 8,"maxLoad": 2,"rate": 4.54,"description": "Bike description","ratings": 198,"imageUrls": ["www.images.com"]}]*/
-
 var bike2 = new bike_1.Bike("Monark 430", "Mountain Bike", 12, 1, 4.7, "Bike description", 100, ["www.images.com"]);
 var app = new app_1.App();
 app.registerUser(user);
@@ -36,13 +34,13 @@ console.log(app.rents);
 app.showUsers();
 app.showBikes();
 app.showRents();
-if (app.userAuthentication("mariat@gmail.com", "abcd1234")) {
+if (app.userAuthentication("mariat@mail.com", "abcd1234")) {
     console.log("Sucessful Login");
 }
 else {
     console.log("Incorrect password");
 }
-if (app.userAuthentication("carlao1234@gmail.com", "XXXXX")) {
+if (app.userAuthentication("carlao1234@mail.com", "XXXXX")) {
     console.log("Sucessful Login");
 }
 else {
